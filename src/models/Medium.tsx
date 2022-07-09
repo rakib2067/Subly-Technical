@@ -1,5 +1,6 @@
 export interface MediaItem{
-    id:number
+    id:number;
+    name:string;
     createdAt:string;
     updatedAt:string;
     cover:string;
@@ -15,6 +16,7 @@ export class Medium{
     
     constructor( 
         public readonly id: number, 
+        public  name: string, 
          createdAt:string, 
          updatedAt: string, 
         public status: status,
@@ -51,9 +53,9 @@ export class Medium{
 
 
                 //duration in years
-                if(dateDifference==12) return `${dateDifference/12} year`  
+                if(dateDifference===12) return `${dateDifference/12} year`  
 
-                if(dateDifference%12==0) return `${dateDifference/12} years`
+                if(dateDifference%12===0) return `${dateDifference/12} years`
 
                 
                 //duration in years and months

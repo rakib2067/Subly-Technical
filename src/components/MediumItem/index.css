@@ -1,0 +1,25 @@
+.medium{
+    display: flex;
+    flex-direction: column;
+    flex: 0 0 25%;
+    max-width: 15%;
+    margin: 1rem;
+    border: 1px solid #d5d7da;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.medium img{
+    height: 100px;
+    width: 100%;
+    object-fit: cover;
+
+}
+
+.cardBottom{
+    padding: .5rem 1rem;
+}
+
+.cardBottom p,h3{
+    margin:0
+}

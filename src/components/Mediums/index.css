@@ -1,0 +1,5 @@
+.medium--list{
+    display: flex;
+    flex-wrap: wrap;
+    padding: 0rem 1rem;
+}

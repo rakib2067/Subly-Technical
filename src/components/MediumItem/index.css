@@ -1,38 +1,13 @@
+/* Card structure */
 .medium{
     display: flex;
     flex-direction: column;
     flex: 0 0 30%;
-    /* max-width: 15%; */
     margin: 1rem;
     border: 1px solid #d5d7da;
     border-radius: 5px;
     overflow: hidden;
     box-shadow: 0 2px 15px rgba(0,0,0,.2);
-}
-
-.ready{
-    cursor: pointer;
-    transition: all .15s;
-}
-
-.ready:hover{
-    box-shadow: 0 2px 20px rgba(0,0,0,.4);
-}
-
-
-
-
-.card--image{
-    /* height: 180px; */
-    position: absolute;
-    top:0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    height: 100%;
-    width: 100%;
-    object-fit: cover;
-
 }
 
 .card--bottom{
@@ -50,64 +25,7 @@
     margin-bottom: .3rem;
 }
 
-.card--status{
-    color:#6b7280;
-    font-size: .8rem;
-    margin-bottom: .5rem;
-}
-.card--icon{
-    position: absolute;
-    top: .8rem;
-    right: 5px;
-    cursor: pointer;
-    transition: all .2s;
-}
-.card--icon:hover{
-    fill:#ccc
-}
-
-.img--container{
-    position: relative;
-    /* height: 180px; */
-    padding-top: 60%;
-    border-radius: 10px;
-}
-
-
-
-.overlay--ready{
-    padding: 1rem;
-    background: rgba(30,30,30,.6);
-}
-.overlay--transcribing{
-    padding: 1rem;
-    background: rgba(255,255,255,.5);
-    flex-direction: column;
-}
-
-.overlay--error{
-    background-color: #FBE6E6;
-    padding: 1rem; 
-    flex-direction: column;
-}
-.overlay--error .btn--container{
-    align-self: flex-end;
-    margin-top: 1rem;
-}
-
-.overlay{
-    position: absolute;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    top:0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    z-index: 3;
-    height: 100%;
-    width: 100%;
-}
+/* Buttons */
 .btn{
     outline: none;
     font-weight: bold;
@@ -154,8 +72,70 @@
     background-color: #3d00ad;
 }
 
-.hide{
-    display: none;
+
+/* Imagine container and overlays */
+
+.img--container{
+    position: relative;
+    padding-top: 60%;
+    border-radius: 10px;
+}
+
+.card--image{
+    position: absolute;
+    top:0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+
+}
+.card--status{
+    color:#6b7280;
+    font-size: .8rem;
+    margin-bottom: .5rem;
+}
+.card--icon{
+    position: absolute;
+    top: .8rem;
+    right: 5px;
+    cursor: pointer;
+    transition: all .2s;
+}
+.card--icon:hover{
+    fill:#ccc
+}
+.overlay{
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    top:0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 3;
+    height: 100%;
+    width: 100%;
+}
+
+
+/* Ready state */
+
+.ready{
+    cursor: pointer;
+    transition: all .15s;
+}
+
+.ready:hover{
+    box-shadow: 0 2px 20px rgba(0,0,0,.4);
+}
+
+.overlay--ready{
+    padding: 1rem;
+    background: rgba(30,30,30,.6);
 }
 
 .languages{
@@ -170,18 +150,18 @@
 }
 
 
+/* Error state */
 
-@media screen and (max-width:1000px) {
-    .medium{
-        flex:0 0 40%
-    }
-    
+
+
+.overlay--error{
+    background-color: #FBE6E6;
+    padding: 1rem; 
+    flex-direction: column;
 }
-@media screen and (max-width:700px) {
-    .medium{
-        flex:0 0 80%
-    }
-    
+.overlay--error .btn--container{
+    align-self: flex-end;
+    margin-top: 1rem;
 }
 
 .error--text{
@@ -200,6 +180,21 @@
     margin: 1px .5rem 0 0;
 }
 
+
+/* Transcribing state */
+
+.overlay--transcribing{
+    padding: 1rem;
+    background: rgba(255,255,255,.5);
+    flex-direction: column;
+}
+
+
+
+
+
+
+/* Progress Bar */
 .progress{
     width: 100%;
     height: 5px;
@@ -208,4 +203,22 @@
     display: flex;
     justify-content: space-evenly;
     overflow: hidden;
+}
+
+/* Responsiveness */
+
+@media screen and (max-width:1000px) {
+    .medium{
+        flex:0 0 40%
+    }
+    
+}
+@media screen and (max-width:700px) {
+    .medium{
+        flex:0 0 80%
+    }
+    
+}
+.hide{
+    display: none;
 }

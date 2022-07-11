@@ -4,14 +4,6 @@ import './index.css'
 
 import warningIcon from '../../images/warning.png'
 
-// interface CardProps{
-//     id:number;
-//     name:string;
-//     cover:string;
-//     status:'ready'|'error'|'transcribing';
-//     createdAt: Date;
-// }
-
 
 export const MediumItem: React.FC<{item: Medium}> = ({item}) => {
   const [show,setShow]= useState(false)
@@ -49,7 +41,6 @@ export const MediumItem: React.FC<{item: Medium}> = ({item}) => {
   return (
     <li className={`medium ${item.status}`} onMouseOut={()=>setShow(false)} onMouseOver={()=> setShow(true)}>
         <div className='img--container'>
-
         <img className='card--image' src={item.cover} alt="" />
         {overlay}
         </div>

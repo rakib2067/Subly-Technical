@@ -3,6 +3,10 @@
     flex-wrap: wrap;
     padding: 0rem 1rem;
 }
+select{
+    margin:auto;
+    display: block;
+}
 
 @media screen and (max-width:1000px) {
     .medium--list{

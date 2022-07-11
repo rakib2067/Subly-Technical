@@ -9,7 +9,7 @@ export const Mediums: React.FC<{items: Medium[],languages:string[]}>=({items,lan
   const [language,setLanguage]= useState('all')
 
 
-  // let filteredList: Medium[]=status&& language==='all'?  items :items.filter(item=>item.status===status)
+  //Filter based on user options
   let filteredList: Medium[]=[]
   if(status==='all' && language==="all")
     filteredList=items

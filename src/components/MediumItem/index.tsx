@@ -8,6 +8,8 @@ import warningIcon from '../../images/warning.png'
 export const MediumItem: React.FC<{item: Medium}> = ({item}) => {
   const [show,setShow]= useState(false)
   let overlay;
+
+  //Conditionally render overlay based on item status
   if(item.status=='ready'){
     overlay=
     <div className={`overlay ${!show? 'hide':' overlay--ready'}`} >
@@ -16,6 +18,8 @@ export const MediumItem: React.FC<{item: Medium}> = ({item}) => {
       <span className='languages'>{item.languages.length >1? `${item.languages.length} languages` : `${item.languages.length} language`}</span>
   </div>
   }
+
+  //if error, do not render the image
   else if (item.status=='error'){
     overlay=
     <div className='overlay overlay--error'>
@@ -28,16 +32,20 @@ export const MediumItem: React.FC<{item: Medium}> = ({item}) => {
       </div>
     </div>
   }
+
+  //If transcribing render progress bar
   else if (item.status=='transcribing'){
     overlay=
     <div className='overlay overlay--transcribing'>
       <h3>Transcribing Subtitles</h3>
 
       <div className="progress">
-      
       </div>
+      
     </div>
   }
+
+
   return (
     <li className={`medium ${item.status}`} onMouseOut={()=>setShow(false)} onMouseOver={()=> setShow(true)}>
         <div className='img--container'>

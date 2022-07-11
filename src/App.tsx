@@ -20,17 +20,22 @@ function App() {
       setLoading(true)
       let response= await fetch(`https://run.mocky.io/v3/a811c0e9-adae-4554-9694-173aa23bc38b`)
       let data= await response.json();
+
+      //Creating medium instances for each item in the fetched array, and adding languages to language array
       let newArray:Medium[]= data.media.map((media: MediaItem)=> {
       setLanguages((prev)=> [...prev, ...media.languages])
       return new Medium(media.id,media.name,media.createdAt,media.updatedAt,media.status,media.cover,media.languages,media.errorMessage)})
+
+      //Make sure languages array contains only unqiue values
       setLanguages(prev=>{
         let seen: hashTable= {};
         return prev.filter(item=>{return seen.hasOwnProperty(item) ? false : (seen[item] = true)})
       })
       setMediums(newArray)
       setLoading(false)
+      } 
       
-    } catch (error: unknown) {
+      catch (error: unknown) {
       if(typeof error=='string'){
         setError(error)
         setLoading(false)

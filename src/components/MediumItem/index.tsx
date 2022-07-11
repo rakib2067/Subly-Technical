@@ -10,7 +10,7 @@ export const MediumItem: React.FC<{item: Medium}> = ({item}) => {
   let overlay;
 
   //Conditionally render overlay based on item status
-  if(item.status=='ready'){
+  if(item.status==='ready'){
     overlay=
     <div className={`overlay ${!show? 'hide':' overlay--ready'}`} >
       <button className="btn btn--edit">Edit</button>
@@ -20,7 +20,7 @@ export const MediumItem: React.FC<{item: Medium}> = ({item}) => {
   }
 
   //if error, do not render the image
-  else if (item.status=='error'){
+  else if (item.status==='error'){
     overlay=
     <div className='overlay overlay--error'>
       <div className='error--container'>
@@ -34,14 +34,14 @@ export const MediumItem: React.FC<{item: Medium}> = ({item}) => {
   }
 
   //If transcribing render progress bar
-  else if (item.status=='transcribing'){
+  else if (item.status==='transcribing'){
     overlay=
     <div className='overlay overlay--transcribing'>
       <h3>Transcribing Subtitles</h3>
 
       <div className="progress">
       </div>
-      
+
     </div>
   }
 

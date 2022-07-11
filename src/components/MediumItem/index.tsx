@@ -36,6 +36,16 @@ export const MediumItem: React.FC<{item: Medium}> = ({item}) => {
       </div>
     </div>
   }
+  else if (item.status=='transcribing'){
+    overlay=
+    <div className='overlay overlay--transcribing'>
+      <h3>Transcribing Subtitles</h3>
+
+      <div className="progress">
+      
+      </div>
+    </div>
+  }
   return (
     <li className={`medium ${item.status}`} onMouseOut={()=>setShow(false)} onMouseOver={()=> setShow(true)}>
         <div className='img--container'>
